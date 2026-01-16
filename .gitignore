@@ -1,0 +1,21 @@
+# --- JAVA ---
+target/
+.mvn/
+mvnw
+mvnw.cmd
+*.class
+.idea/
+*.iml
+
+# --- REACT ---
+node_modules/
+dist/
+build/
+.env
+
+# --- SYSTEM ---
+.DS_Store
+Thumbs.db
+
+application.properties
+src/main/resources/application.properties

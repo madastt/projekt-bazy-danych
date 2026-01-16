@@ -1,0 +1,200 @@
+/* Reset i Ogólne */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f0f2f5;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: #333;
+    margin: 0;
+    display: flex;            /* To i poniższe centruje całość */
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/* Główny kontener */
+.app-container {
+    width: 100%;              /* Zajmij całą dostępną szerokość... */
+    max-width: 1000px;        /* ...ale nie więcej niż 1000px */
+    margin: 40px 20px;        /* Odstęp od góry i boków */
+    padding: 0;
+}
+
+.header-title {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+    letter-spacing: -1px;
+}
+
+.header-title span {
+    color: #3498db; /* Akcent kolorystyczny */
+}
+
+/* Grid - układ kafelków */
+.panel-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+@media (max-width: 768px) {
+    .panel-grid {
+        grid-template-columns: 1fr; /* Na telefonie jeden pod drugim */
+    }
+}
+
+/* Kafelki (Karty) */
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border-top: 5px solid transparent;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card.add-form {
+    border-top-color: #27ae60; /* Zielony pasek */
+}
+
+.card.search-box {
+    border-top-color: #2980b9; /* Niebieski pasek */
+}
+
+h3 {
+    margin-top: 0;
+    color: #444;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* Formularze i Inputy */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input, select {
+    padding: 12px 15px;
+    border: 1px solid #ccc; /* Ciemniejsza ramka */
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: #ffffff !important; /* Wymuszone białe tło */
+    color: #000000 !important;            /* Wymuszony CZARNY tekst */
+    margin-bottom: 5px;
+}
+
+input::placeholder {
+    color: #888; /* Kolor podpowiedzi (placeholder) */
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: #3498db;
+    background-color: white;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+/* Przyciski */
+.btn-save {
+    background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 16px;
+    transition: opacity 0.2s;
+    margin-top: 10px;
+}
+
+.btn-save:hover {
+    opacity: 0.9;
+}
+
+.btn-delete {
+    background-color: #fff0f0;
+    color: #e74c3c;
+    border: 1px solid #fab1b1;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+.btn-delete:hover {
+    background-color: #e74c3c;
+    color: white;
+    border-color: #e74c3c;
+}
+
+/* Tabela */
+.table-container {
+    overflow-x: auto;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px;
+}
+
+.styled-table thead tr {
+    background-color: #2c3e50;
+    color: #ffffff;
+    text-align: left;
+}
+
+.styled-table th, .styled-table td {
+    padding: 15px 20px;
+}
+
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f8f9fa;
+}
+
+.styled-table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #2c3e50;
+}
+
+/* Dodatki */
+.price-tag {
+    font-weight: bold;
+    color: #27ae60;
+    background: #eafaf1;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.category-tag {
+    background: #eef2f7;
+    color: #2c3e50;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.9em;
+    font-weight: 500;
+}
