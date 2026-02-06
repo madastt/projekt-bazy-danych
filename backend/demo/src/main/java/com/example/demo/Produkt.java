@@ -3,11 +3,12 @@ package com.example.demo;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "MOJE_PRODUKTY")
+@Table(name = "PRODUKTY")
 public class Produkt {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "prod_seq")
+    @SequenceGenerator(name = "prod_seq", sequenceName = "PRODUKTY_SEQ", allocationSize = 1)
     private Long id;
 
     private String nazwa;
@@ -15,6 +16,7 @@ public class Produkt {
 
     // Klucz obcy - proste ID kategorii
     private Long kategoriaId;
+    private Long dostawcaId;
 
     public Produkt() {}
 
@@ -26,4 +28,6 @@ public class Produkt {
     public void setCena(Double cena) { this.cena = cena; }
     public Long getKategoriaId() { return kategoriaId; }
     public void setKategoriaId(Long kategoriaId) { this.kategoriaId = kategoriaId; }
+    public Long getDostawcaId() { return dostawcaId; }
+    public void setDostawcaId(Long dostawcaId) { this.dostawcaId = dostawcaId; }
 }

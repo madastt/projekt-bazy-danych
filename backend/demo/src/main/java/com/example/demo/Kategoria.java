@@ -3,11 +3,11 @@ package com.example.demo;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "MOJE_KATEGORIE") // Twoja nazwa tabeli
+@Table(name = "KATEGORIE")
 public class Kategoria {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO) // Niech Oracle martwi się o ID
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     private String nazwa;
