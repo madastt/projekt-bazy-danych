@@ -19,7 +19,10 @@ public class DostawcaController {
     }
 
     @GetMapping
-    public List<Dostawca> getDostawcy() {
+    public List<Dostawca> getDostawcy(@RequestParam(required = false) String szukaj) {
+        if (szukaj != null && !szukaj.isEmpty()) {
+            return dostawcaRepo.szukajDostawcow(szukaj);
+        }
         return dostawcaRepo.findAll();
     }
 

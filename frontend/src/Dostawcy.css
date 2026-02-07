@@ -1,0 +1,18 @@
+/* Dostawcy.css */
+.dostawcy-page .styled-table {
+    table-layout: fixed;
+    width: 100%;
+}
+
+/* Twarde wymiary dla dostawców */
+.dostawcy-page th:nth-child(1) { width: 80px; }  /* ID */
+.dostawcy-page th:nth-child(2) { width: auto; }  /* Firma */
+.dostawcy-page th:nth-child(3) { width: 160px; } /* NIP */
+.dostawcy-page th:nth-child(4) { width: 160px; } /* Miasto */
+.dostawcy-page th:nth-child(5) { width: 200px; } /* Akcje */
+
+.dostawcy-page td {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

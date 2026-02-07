@@ -1,0 +1,20 @@
+/* Produkty.css */
+.produkty-page .styled-table {
+    table-layout: fixed; /* To wymusza twarde szerokości */
+    width: 100%;
+}
+
+/* Definiujemy konkretne szerokości kolumn */
+.produkty-page .styled-table th:nth-child(1) { width: 70px; }   /* ID */
+.produkty-page .styled-table th:nth-child(2) { width: 25%; }    /* Produkt (elastyczny %) */
+.produkty-page .styled-table th:nth-child(3) { width: 100px; }  /* Cena */
+.produkty-page .styled-table th:nth-child(4) { width: 150px; }  /* Dostawca */
+.produkty-page .styled-table th:nth-child(5) { width: 130px; }  /* Kategoria */
+.produkty-page .styled-table th:nth-child(6) { width: 110px; }  /* Akcje */
+
+/* Zabezpieczenie przed długim tekstem */
+.produkty-page td {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Dodaje "..." jeśli tekst jest za długi */
+}
