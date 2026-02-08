@@ -20,22 +20,13 @@ public class SklepController {
     @GetMapping("/produkty")
     public List<Produkt> getProdukty(
             @RequestParam(required = false) String szukaj,
-            @RequestParam(required = false) Long dostawcaId) {
+            @RequestParam(required = false) Long dostawcaId,
+            @RequestParam(required = false) Long kategoriaId // NOWOŚĆ
+    ) {
+        // Jeśli parametry są puste, przekazujemy null do zapytania
+        String fraza = (szukaj != null && !szukaj.isEmpty()) ? szukaj : null;
 
-        // 1. Jeśli wybrano dostawcę ORAZ wpisano tekst
-        if (szukaj != null && !szukaj.isEmpty() && dostawcaId != null) {
-            return produktRepo.findByNazwaContainingIgnoreCaseAndDostawcaId(szukaj, dostawcaId);
-        }
-        // 2. Jeśli wybrano TYLKO dostawcę
-        else if (dostawcaId != null) {
-            return produktRepo.findByDostawcaId(dostawcaId);
-        }
-        // 3. Jeśli wpisano TYLKO tekst
-        else if (szukaj != null && !szukaj.isEmpty()) {
-            return produktRepo.findByNazwaContainingIgnoreCase(szukaj);
-        }
-        // 4. Pobierz wszystko
-        return produktRepo.findAll();
+        return produktRepo.szukajZaawansowane(fraza, dostawcaId, kategoriaId);
     }
 
     @PostMapping("/produkty")
