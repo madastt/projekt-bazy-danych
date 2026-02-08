@@ -11,8 +11,14 @@
 .dostawcy-page th:nth-child(4) { width: 160px; } /* Miasto */
 .dostawcy-page th:nth-child(5) { width: 200px; } /* Akcje */
 
-.dostawcy-page td {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+.dostawcy-page .styled-table td {
+    padding: 15px; /* Większy odstęp daje "oddech" przy długim tekście */
+    line-height: 1.4; /* Większy odstęp między liniami tekstu ułatwia czytanie */
+    vertical-align: middle; /* Centruje przyciski obok wielolinijkowej nazwy */
+    white-space: normal;
+    word-break: break-word;
+}
+
+.styled-table th:nth-child(5), .styled-table td:nth-child(5){
+    text-align: center;
 }

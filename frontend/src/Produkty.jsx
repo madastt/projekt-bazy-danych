@@ -126,8 +126,8 @@ function Produkty() {
                                     <td><span className="supplier-tag">{znajdzNazweDostawcy(p.dostawcaId)}</span></td>
                                     <td><span className="category-tag">{znajdzNazweKategorii(p.kategoriaId)}</span></td>
                                     <td>
-                                        <button onClick={() => handleEdytuj(p)} className="btn-edit">✏️</button>
-                                        <button onClick={() => handleUsun(p.id)} className="btn-delete">🗑️</button>
+                                        <button onClick={() => handleEdytuj(p)} className="btn-edit">Edytuj</button>
+                                        <button onClick={() => handleUsun(p.id)} className="btn-delete">️Usuń</button>
                                     </td>
                                 </tr>
                             ))}

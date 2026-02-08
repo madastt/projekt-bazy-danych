@@ -9,12 +9,37 @@
 .produkty-page .styled-table th:nth-child(2) { width: 25%; }    /* Produkt (elastyczny %) */
 .produkty-page .styled-table th:nth-child(3) { width: 100px; }  /* Cena */
 .produkty-page .styled-table th:nth-child(4) { width: 150px; }  /* Dostawca */
-.produkty-page .styled-table th:nth-child(5) { width: 130px; }  /* Kategoria */
+.produkty-page .styled-table th:nth-child(5) { width: 15%; }  /* Kategoria */
 .produkty-page .styled-table th:nth-child(6) { width: 110px; }  /* Akcje */
 
 /* Zabezpieczenie przed długim tekstem */
 .produkty-page td {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis; /* Dodaje "..." jeśli tekst jest za długi */
+    padding: 15px; /* Większy odstęp daje "oddech" przy długim tekście */
+    line-height: 1.4; /* Większy odstęp między liniami tekstu ułatwia czytanie */
+    vertical-align: middle; /* Centruje przyciski obok wielolinijkowej nazwy */
+    white-space: normal;
+    word-break: break-word;
+}
+.supplier-tag {
+    display: inline-block;
+    background-color: #f3e5f5;
+    color: #7b1fa2;
+    padding: 2px 8px;
+    border-radius: 6px;
+    font-size: 0.85em;
+    font-weight: 600;
+    border: 1px solid #e1bee7;
+    /* Dodaj to, żeby pigułka nie była "blokiem": */
+    white-space: normal;
+    line-height: 1.2;
+    max-width: 100%; /* Żeby nie wyszła poza komórkę */
+}
+.styled-table th:nth-child(3), .styled-table td:nth-child(3), /* Cena */
+.styled-table th:nth-child(6), .styled-table td:nth-child(6)  /* Akcje */ {
+    text-align: center;
+}
+.styled-table td:first-child {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 0.85rem;
 }

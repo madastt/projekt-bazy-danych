@@ -109,8 +109,8 @@ function Dostawcy() {
                                     <td>{d.nip}</td>
                                     <td>{d.miasto}</td>
                                     <td>
-                                        <button onClick={() => handleEdytujDostawce(d)} className="btn-edit">✏️</button>
-                                        <button onClick={() => handleUsunDostawce(d.id)} className="btn-delete">🗑️</button>
+                                        <button onClick={() => handleEdytujDostawce(d)} className="btn-edit">Edytuj</button>
+                                        <button onClick={() => handleUsunDostawce(d.id)} className="btn-delete">Usuń</button>
                                     </td>
                                 </tr>
                             ))}
